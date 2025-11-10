@@ -188,6 +188,21 @@ section h3 {
   padding-top: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Adjust register button to work with share button */
+.activity-card-actions .register-button {
+  flex: 1;
+  min-width: 120px;
+  margin-top: 0;
+}
+
+.activity-card-actions .auth-notice {
+  flex: 1;
+  min-width: 120px;
 }
 
 /* Activity Tag */
@@ -663,4 +678,85 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Social Share Buttons */
+.share-container {
+  position: relative;
+  margin-left: 8px;
+}
+
+.share-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 4px rgba(26, 35, 126, 0.2);
+}
+
+.share-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(26, 35, 126, 0.3);
+}
+
+.share-icon {
+  font-size: 1rem;
+}
+
+.share-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  min-width: 150px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.share-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.share-option:hover {
+  background-color: var(--background);
+}
+
+.share-option-icon {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
 }
